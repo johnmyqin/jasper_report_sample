@@ -66,7 +66,7 @@ public class HeroImplDAO implements HeroDAO {
 
 	@Override
 	public List<Hero> findByHeroType(String type) {
-		String sql = "SELECT ID, NAME FROM HERO WHERE TYPE = ?";
+		String sql = "SELECT ID, NAME, ATK_TYPE, ROLE, TYPE FROM HERO WHERE TYPE = ?";
 
 		Connection conn = null;
 		try {
@@ -76,7 +76,11 @@ public class HeroImplDAO implements HeroDAO {
 			List<Hero> heros = new ArrayList<Hero>();
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				heros.add(new Hero(rs.getInt("ID"),rs.getString("NAME").toLowerCase()));
+				heros.add(new Hero(rs.getInt("ID"),
+						rs.getString("NAME").toLowerCase(),
+						rs.getString("ATK_TYPE"),
+						rs.getString("ROLE"),
+						rs.getString("TYPE")));
 			}
 			rs.close();
 			ps.close();

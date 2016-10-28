@@ -24,9 +24,12 @@ public class Hero {
 	public String avatar;
 	public List<Skill> skills;
 	
-	public Hero(int id, String name){
+	public Hero(int id, String name, String atk_type, String role, String type){
 		this.id = id;
 		this.name = name;
+		this.atk_type = atk_type;
+		this.role= role;
+		this.type = type;
 	}
 	
 	public Hero(int id, 

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="compare" pageWidth="666" pageHeight="700" columnWidth="626" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9957dc02-e7a8-4037-8abd-fa237c16b62d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="267"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="intelligence" class="java.lang.Integer"/>
+	<field name="agility" class="java.lang.Integer"/>
+	<field name="strength" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="442" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="73" width="626" height="230" uuid="967fd912-25b0-46ef-a105-341961655f49"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{name}]]></seriesExpression>
+						<categoryExpression><![CDATA["INTELLIGENCE"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{intelligence}]]></valueExpression>
+						<labelExpression><![CDATA[$F{intelligence}.toString()]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{name}]]></seriesExpression>
+						<categoryExpression><![CDATA["AGILITY"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{agility}]]></valueExpression>
+						<labelExpression><![CDATA[$F{agility}.toString()]]></labelExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{name}]]></seriesExpression>
+						<categoryExpression><![CDATA["STRENGTH"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{strength}]]></valueExpression>
+						<labelExpression><![CDATA[$F{strength}.toString()]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<elementGroup/>
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="331" width="200" height="100" uuid="faf585af-7f3a-4aa0-9fa9-5fe60e9c8220"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{intelligence}]]></valueExpression>
+					<labelExpression><![CDATA[$F{intelligence}.toString()]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="214" y="331" width="200" height="100" uuid="b1762669-de4d-4a89-bf36-65a21da1c755"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{agility}]]></valueExpression>
+					<labelExpression><![CDATA[$F{agility}.toString()]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="426" y="331" width="200" height="100" uuid="9ecacbc4-72e5-4510-865e-742bd270359b"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{name}]]></keyExpression>
+					<valueExpression><![CDATA[$F{strength}]]></valueExpression>
+					<labelExpression><![CDATA[$F{strength}.toString()]]></labelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+			<staticText>
+				<reportElement x="0" y="0" width="626" height="57" uuid="e2273a01-41fc-4a3e-ab03-58ff45cd1fb6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Sazanami Mincho Regular" size="48" isBold="true"/>
+				</textElement>
+				<text><![CDATA[サンプルレポート]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band height="270">
+			<componentElement>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="626" height="266" uuid="2efc4d58-6119-4c62-9eaa-d27e902e30a5"/>
+				<mp:map xmlns:mp="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" evaluationTime="Report" mapScale="4">
+					<mp:latitudeExpression><![CDATA[10.787841f]]></mp:latitudeExpression>
+					<mp:longitudeExpression><![CDATA[106.685193f]]></mp:longitudeExpression>
+					<mp:zoomExpression><![CDATA[18]]></mp:zoomExpression>
+					<mp:languageExpression><![CDATA["en"]]></mp:languageExpression>
+					<mp:markerData>
+						<dataset resetType="None"/>
+						<mp:item>
+							<mp:itemProperty name="latitude">
+								<valueExpression><![CDATA[10.787847]]></valueExpression>
+							</mp:itemProperty>
+							<mp:itemProperty name="longitude">
+								<valueExpression><![CDATA[106.685282]]></valueExpression>
+							</mp:itemProperty>
+						</mp:item>
+					</mp:markerData>
+					<mp:markerData>
+						<dataset resetType="None"/>
+						<mp:item>
+							<mp:itemProperty name="latitude">
+								<valueExpression><![CDATA[10.787847f]]></valueExpression>
+							</mp:itemProperty>
+							<mp:itemProperty name="longitude">
+								<valueExpression><![CDATA[106.685282f]]></valueExpression>
+							</mp:itemProperty>
+						</mp:item>
+					</mp:markerData>
+				</mp:map>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

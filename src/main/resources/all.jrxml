@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="all" pageWidth="800" pageHeight="1000" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="org.krams.tutorial.scriptlet.ReportScriptlet" uuid="3042d309-3b58-4a31-b5e9-842980d3ff19">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="29"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/resources/"]]></defaultValueExpression>
+	</parameter>
+	<field name="name" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="role" class="java.lang.String"/>
+	<field name="atk_type" class="java.lang.String"/>
+	<field name="avatar" class="java.lang.String"/>
+	<field name="skills" class="java.util.List"/>
+	<variable name="test_counter" class="java.lang.Integer" calculation="System"/>
+	<variable name="hero_type" class="java.lang.String" calculation="System"/>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="760" height="79" forecolor="#014ACF" backcolor="#FFFFFF" uuid="cdb1c089-0ae0-4b3d-9341-939325334729"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HEROES IN DOTA 2]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<textField>
+				<reportElement x="256" y="11" width="504" height="30" forecolor="#A10000" uuid="af32dee4-d2dc-44d8-ac92-ed7805109d4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($V{REPORT_COUNT}+$V{test_counter}) +". "+$F{name}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="41" width="504" height="30" uuid="8781ec6a-6fa2-4902-951d-f6442fbfe8e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{hero_type}+" - "+$F{atk_type} + " - " + $F{role}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="256" y="71" width="504" height="84" uuid="55de7bab-af20-4f2d-8f86-762eeb719897"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{skills})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "skill.jasper"]]></subreportExpression>
+			</subreport>
+			<image>
+				<reportElement x="0" y="11" width="256" height="144" uuid="ebdc0a50-d212-4073-8824-f0f25ac1e59c"/>
+				<imageExpression><![CDATA[$F{avatar}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="4" width="760" height="1" uuid="974d9055-71f2-462f-833f-8ff9fb1d1d3b"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

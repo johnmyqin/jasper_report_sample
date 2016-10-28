@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hero" pageWidth="800" pageHeight="1000" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b84a9417-b736-4512-a8fb-8c7b12cb06fb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="205"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="type" class="java.lang.String"/>
+	<parameter name="role" class="java.lang.String"/>
+	<parameter name="bio" class="java.lang.String"/>
+	<parameter name="atk_type" class="java.lang.String"/>
+	<parameter name="avatar" class="java.lang.String"/>
+	<parameter name="int" class="java.lang.Integer"/>
+	<parameter name="agi" class="java.lang.Integer"/>
+	<parameter name="str" class="java.lang.Integer"/>
+	<parameter name="damage" class="java.lang.Integer"/>
+	<parameter name="speed" class="java.lang.Integer"/>
+	<parameter name="armor" class="java.lang.Integer"/>
+	<parameter name="health" class="java.lang.Integer"/>
+	<parameter name="mana" class="java.lang.Integer"/>
+	<parameter name="atk_range" class="java.lang.Integer"/>
+	<parameter name="sight_range" class="java.lang.String"/>
+	<field name="icon" class="java.lang.String"/>
+	<field name="full_name" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="mana" class="java.lang.String"/>
+	<field name="cooldown" class="java.lang.String"/>
+	<field name="ability" class="java.lang.String"/>
+	<field name="affects" class="java.lang.String"/>
+	<field name="damage_type" class="java.lang.String"/>
+	<field name="spell_immunity" class="java.lang.String"/>
+	<field name="damage" class="java.lang.String"/>
+	<field name="range" class="java.lang.String"/>
+	<field name="duration" class="java.lang.String"/>
+	<field name="stun_duration" class="java.lang.String"/>
+	<field name="bonus" class="java.lang.String"/>
+	<field name="scepter_bonus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="434" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="760" height="29" isRemoveLineWhenBlank="true" forecolor="#AB0000" uuid="d6fdddac-6c16-4941-bc9d-5ff1992a0537"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="29" width="760" height="24" isRemoveLineWhenBlank="true" uuid="600292f1-9a49-4780-8875-7cb5f94f0d67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type}+" - "+$P{atk_type}+" - "+$P{role}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="17" y="68" width="256" height="144" uuid="b4a44dd1-c6bb-4bb9-8f39-048254a40d46"/>
+				<imageExpression><![CDATA[$P{avatar}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="291" y="53" width="469" height="27" forecolor="#C30000" uuid="347a84ed-2b92-4dc1-8e1a-1b25e76cf091"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="291" y="80" width="469" height="252" isRemoveLineWhenBlank="true" uuid="b04c5eb6-3a33-472e-acc4-b8608ef4ce4e"/>
+				<textElement verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bio}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="12" y="233" width="33" height="33" uuid="4f2fce15-7a1d-40e2-903a-9bf8667b0df9"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/overviewicon_int.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="12" y="266" width="33" height="33" uuid="534dc201-30e0-45f8-83cb-a3fd8ece139b"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/overviewicon_agi.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="12" y="299" width="33" height="33" uuid="cd8fd6e7-7d81-4d17-8d59-fb088e38c972"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/overviewicon_str.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="45" y="233" width="100" height="33" uuid="9bc2756c-4d1d-40fe-9bf8-db40496e55b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{int}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="266" width="100" height="33" uuid="fd6ac809-b4a3-46ef-8773-4399c6f71fa7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{agi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="299" width="100" height="33" uuid="30ebb80e-50b8-42a2-89c0-72ad1af1fede"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{str}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="145" y="233" width="33" height="33" uuid="d1bcca81-1b03-4933-8680-20694c57107c"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/overviewicon_attack.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="145" y="266" width="33" height="33" uuid="9013687e-5b43-493c-938e-d474a52af401"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/overviewicon_speed.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="145" y="299" width="33" height="33" uuid="f9b35749-cf26-4409-8778-2bb9766e5b3d"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/overviewicon_defense.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="178" y="233" width="100" height="33" uuid="2479ecf0-26e6-426a-bb17-73a51826e79f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{damage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="266" width="100" height="33" uuid="548be2b2-020c-44a8-920e-cfea0d6d8f69"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{speed}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="299" width="100" height="33" uuid="0fd804c2-86ac-4dd0-b821-a59b11fb3110"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{armor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="345" width="760" height="27" forecolor="#C30000" uuid="95f97829-fc7b-4f2d-9554-b834717a2e33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="372" width="121" height="20" uuid="25b8674e-6893-4bd0-a82e-98ab5548168e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HIT PONTS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="299" y="372" width="86" height="20" forecolor="#E60000" uuid="606f99aa-c276-4a00-9fbb-ad668bc6485e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[$P{health}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="385" y="372" width="99" height="20" uuid="9c0847c5-1bb1-43a9-bfd5-7d3b8ed56a3c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIGHT RANGE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="484" y="372" width="92" height="20" forecolor="#E60000" uuid="b8ddffba-d748-42f0-81e8-ea4f803557b6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[$P{sight_range}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="178" y="392" width="121" height="20" uuid="cc1512ef-ab76-430e-8ed7-850b9b020303"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MANA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="412" width="121" height="20" uuid="84294440-5098-4225-8c2a-ba2c60865b19"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAMAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="412" width="99" height="20" uuid="af66e4de-f90a-410e-8e55-44c06457d47e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARMOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="392" width="99" height="20" uuid="e087e314-8827-4cb7-a4ad-0e3c767dd4f8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="html">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATTACK RANGE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="299" y="392" width="86" height="20" forecolor="#E60000" uuid="f9461609-bcde-490b-b57b-8ecbd7b7838c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[$P{mana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="412" width="86" height="20" forecolor="#E60000" uuid="df367321-89bb-46e1-8f25-431b8393bbcd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[$P{damage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="412" width="92" height="20" forecolor="#E60000" uuid="ea122c99-6e29-489c-8433-44274c366ded"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[$P{armor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="392" width="92" height="20" forecolor="#E60000" uuid="9d7418f3-7c87-48ff-8d6d-612b786f97c4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html"/>
+				<textFieldExpression><![CDATA[$P{atk_range}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="760" height="27" forecolor="#C30000" uuid="80569c44-3344-480a-bc4b-38143206ce48"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ABILITIES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="210" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="110" height="110" uuid="16e2812d-9f50-4b7c-a20d-9326b781afdf"/>
+				<imageExpression><![CDATA[$F{icon}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="131" y="0" width="365" height="20" uuid="42d5883b-f553-4569-98e0-3beef65c5cf3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{full_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="131" y="20" width="365" height="72" uuid="9baf1f12-fa40-4720-8709-20ddf716d88a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="511" y="20" width="22" height="22" uuid="548ae2a1-e147-436a-955c-8aba4f0c5e89"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/mana.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="511" y="70" width="22" height="22" uuid="b38f695f-fce1-443e-b2e7-727523ce1c3c"/>
+				<imageExpression><![CDATA["/Users/admin/Downloads/spring-jasper-integration/src/main/webapp/WEB-INF/assets/img/common/cooldown.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="543" y="20" width="68" height="22" uuid="33b3f99b-ecd4-4650-9c07-c3b5402af59a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[MANA COST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="543" y="68" width="68" height="22" uuid="cef39cbe-28fe-4f92-8a16-966ee1657d81"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[COOL DOWN]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="611" y="20" width="149" height="22" uuid="fda3c400-12b5-4bd6-a6e5-aed60dd47b63"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="611" y="68" width="149" height="22" uuid="ad5f229e-0e0f-4bd4-8578-e79ea9674975"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cooldown}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="131" y="98" width="139" height="20" uuid="fb7beff2-bc2a-4197-85dc-609e0147e58e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[ABILITY : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="118" width="142" height="20" uuid="fa242644-ebea-41fe-9ba1-c8f5de8f2e65"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[AFFECTS : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="138" width="142" height="20" uuid="125bdd63-024a-4b9b-838a-0b10dc81e482"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[DAMAGE TYPE : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="158" width="142" height="20" uuid="e55c402b-3d1a-449f-885b-91e22a3129d5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[PIERCES SPELL IMMUNITY : ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="273" y="98" width="156" height="20" uuid="c21c054f-5f4e-409b-ac9d-a11baa706177"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ability}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="273" y="118" width="156" height="20" uuid="7a59747c-8ce4-491f-8f5c-d6d2bcb30d7e"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{affects}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="273" y="138" width="156" height="20" uuid="63051bac-69a1-49e5-b303-49077da2df99"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{damage_type}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="273" y="158" width="156" height="20" uuid="2991bd12-cfdf-43f4-8c4c-be4d97de48cf"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{spell_immunity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="131" y="178" width="142" height="20" uuid="d9af4b32-424f-44c8-89a7-e563825bc496"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[DAMAGE : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="98" width="107" height="20" uuid="2a52e675-acdf-48ac-b4d8-fd704595c59c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[BONUS : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="118" width="108" height="20" uuid="41a54262-1ac5-40b7-9751-dc6756bcc8c0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[RANGE : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="138" width="108" height="20" uuid="192fe5f7-1ca6-429d-9c72-eb62acecd24b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[DURATION : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="158" width="107" height="20" uuid="5b498fa3-acea-4ddb-a156-abf3758e29e6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[STUN DURATION : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="178" width="108" height="20" forecolor="#009C3A" uuid="6f95da93-7640-4286-923d-ac37633010a9"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SCEPTER BONUS : ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="273" y="178" width="156" height="20" uuid="2530bb5d-48be-41c9-adea-c3fad2d3d09e"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{damage}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="537" y="98" width="223" height="20" uuid="d0656014-e505-46e8-b293-eda293063684"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bonus}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="537" y="118" width="223" height="20" uuid="d94c1e56-bc1b-409d-b97f-01ece36cd4ae"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{range}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="537" y="138" width="223" height="20" uuid="1325cce7-fec6-4244-82fd-ec637c8fc894"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="537" y="158" width="223" height="20" uuid="3ee54cd5-fede-4edd-960a-48f9ea67384f"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stun_duration}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="537" y="178" width="223" height="20" uuid="8fd423be-48d0-419f-9e0a-28efdeab8dc7"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{scepter_bonus}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="203" width="760" height="1" uuid="3a15ccb2-63b7-43dc-8fc1-1010e537856a"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
